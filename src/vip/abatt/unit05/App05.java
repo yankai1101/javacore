@@ -1,8 +1,7 @@
 package vip.abatt.unit05;
 
-import jdk.internal.util.xml.impl.ReaderUTF8;
-
 import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * Author:yankai1101
@@ -13,9 +12,10 @@ public class App05 {
         Class clazz = App05.class;
         InputStream in = clazz.getResourceAsStream("/abc.txt"); // 通过类加载器获得resource目录下的文件流
 
-        BufferedReader br = new BufferedReader(new ReaderUTF8(in));
-        StringBuffer sb = new StringBuffer();
+//        BufferedReader br = new BufferedReader(new ReaderUTF8(in));
+        BufferedReader br = null;
 
+        StringBuffer sb = new StringBuffer();
         String line = null;
         while ((line = br.readLine()) != null) {
             sb.append(line + "\n");
